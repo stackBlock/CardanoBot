@@ -1,0 +1,41 @@
+{
+  "20012001": {
+    "PLEASE READ": [
+      "THESE SETTINGS ARE USED FOR TESTING",
+      "THEY ARE NOT CORRECT. DO NOT USE A SAMPLE"
+    ],
+    "expression": {
+      "changeLed": {
+        "red": "6",
+        "green": "45",
+        "blue": "6"
+      },
+      "setBlinking": "false",
+      "setFlashLight": "false"
+    },
+    "movement": {
+      "driveTime": {
+        "linearVelocity": "23",
+        "angularVelocity": "3",
+        "timeMs": "2",
+        "degree": "32"
+      },
+      "moveArms": {
+        "leftArmPosition": "55",
+        "rightArmPosition": "55",
+        "leftArmVelocity": "55",
+        "rightArmVelocity": "55",
+        "duration": "55",
+        "units": "55"
+      },
+      "moveHead": {
+        "pitch": "26",
+        "roll": "23",
+        "yaw": "34",
+        "velocity": "53",
+        "duration": "63",
+        "units": "45"
+      }
+    }
+  }
+}
