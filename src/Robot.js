@@ -39,7 +39,7 @@ function registerReducer(state, action) {
     };
   } else if (action.type === "led") {
     return {
-      // EXPRESSION DRIVE
+      // EXPRESSION LED
       ...state,
       [action.ledRed]: action.redValue,
       [action.ledBlue]: action.blueValue,
@@ -47,13 +47,13 @@ function registerReducer(state, action) {
     };
   } else if (action.type === "blinking") {
     return {
-      // EXPRESSION DRIVE
+      // EXPRESSION BLINK
       ...state,
       [action.blinkingBlink]: action.blinkValue,
     };
   } else if (action.type === "flashlight") {
     return {
-      // EXPRESSION DRIVE
+      // EXPRESSION FLASHLIGHT
       ...state,
       [action.flashlightFlash]: action.flashValue,
     };
