@@ -120,6 +120,7 @@ cardano-cli transaction submit \
 ```
 # Instructions
 The best thing to do is to watch my video:
+ https://youtu.be/bgQXKd4Upa8
 
 Here is the metadata template, change the variables to make the robot do different things. DO NOT CHANGE THE ID NUMBER AT THE TOP OF THE METADATA OR THE ROBOT WILL NOT WORK,
 ```
