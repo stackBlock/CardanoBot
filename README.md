@@ -24,7 +24,7 @@ npm start
 ```
 ## YOU DO NOT  INSTALL THIS REPO TO USE THE ROBOT
 ```diff
-+ I am just using this space to explain how working the robot works, you do not need to install this repo - you need to SEND METADATA to the Cardano blockchain to control the robot.
+- I am just using this space to explain how the robot works, you do not need to install this repo - you need to SEND METADATA to the Cardano blockchain to control the robot.
 ```
 
 # What the hell is this?
