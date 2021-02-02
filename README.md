@@ -26,6 +26,7 @@ npm start
 ```diff
 - I am just using this space to explain how the robot works, you do not need to install this repo - you need to SEND METADATA to the Cardano blockchain to control the robot.
 ```
+This repo is just for anyone who wants to see how I connected the robot to the metadata.
 
 # What the hell is this?
 This was a way for me to try and justify buying a robot I haven't used in a while / finding a unique use case for the Cardano blockchain, specifically the metadata.
