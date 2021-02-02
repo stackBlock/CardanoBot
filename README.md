@@ -23,30 +23,139 @@ npm install
 npm start
 ```
 ## YOU DO NOT  INSTALL THIS REPO TO USE THE ROBOT
-I am just using this space to explain how working the robot works, you do not need to install this repo - you need to SEND METADATA to the Cardano blockchain to control the robot.
+```diff
++ I am just using this space to explain how working the robot works, you do not need to install this repo - you need to SEND METADATA to the Cardano blockchain to control the robot.
+```
 
-## What the hell is this?
+# What the hell is this?
 This was a way for me to try and justify buying a robot I haven't used in a while / finding a unique use case for the Cardano blockchain, specifically the metadata.
 
-## What can I do?
+# What can I do?
 You can drive my robot around by posting metadata to the Cardano blockchain.
-## Where do I go to see this so-called robot?
+# Where do I go to see this so-called robot?
 This is the address to the live cam:
 
 (If this address is not working, the demo period is over... we needed the dining room back!!)
 
-## How do I do this?
+# How do I do this?
 I am assuming you know how to post metadata to the Cardano blockchain. It is beyond the scope of this readMe to explain how to do that - With that said, here is a sample of the code needed to post metadata if you are running a node. This was kindly provided to me by Cardano community member "TheRealAdamDean" long before I ventured onto this project:
 ```
 ```
-## Instructions
+## get protocol parameters
+```
+cardano-cli query protocol-parameters \
+  --allegra-era \
+  --mainnet \
+  --out-file protocol.json
+
+```
+## get the transaction hash and index of the utxo to spend
+```
+cardano-cli query utxo \
+  --address $(cat payment.addr) \
+  --allegra-era \
+  --mainnet
+
+```
+## Draft the transaction
+```
+cardano-cli transaction build-raw \
+--tx-in b868473668a88189ef648******6f85d6cd147c3581d5066a03ee914d8697f44#0 \
+--tx-out $(cat payment.addr)+0 \
+--metadata-json-file robot.json \
+--ttl 0 \
+--fee 0 \
+--out-file tx.draft
+
+```
+## Calculate fee
+```
+cardano-cli transaction calculate-min-fee \
+--tx-body-file tx.draft \
+--tx-in-count 1 \
+--tx-out-count 1 \
+--witness-count 1 \
+--byron-witness-count 0 \
+--mainnet \
+--protocol-params-file protocol.json
+
+```
+## calculate change 
+```
+expr <UTXO BALANCE> - <AMOUNT TO SEND> - <TRANSACTION FEE>
+
+```
+## Determine the TTL for the transaction
+```
+cardano-cli query tip --mainnet
+
+```
+## build the transaction
+```
+cardano-cli transaction build-raw \
+--tx-in b868473668a88189ef648******6f85d6cd147c3581d5066a03ee914d8697f44#0 \
+--tx-out $(cat payment.addr)+2177708 \
+--metadata-json-file robot.json \
+--ttl 20599000 \
+--fee 184553 \
+--out-file tx.raw
+
+```
+## Sign the transaction
+```
+cardano-cli transaction sign \
+--tx-body-file tx.raw \
+--signing-key-file payment.skey \
+--mainnet \
+--out-file tx.signed
+
+```
+## Submit the transaction
+```
+cardano-cli transaction submit \
+--tx-file tx.signed \
+--mainnet
+```
+# Instructions
 The best thing to do is to watch my video:
 
 Here is the metadata template, change the variables to make the robot do different things. DO NOT CHANGE THE ID NUMBER AT THE TOP OF THE METADATA OR THE ROBOT WILL NOT WORK,
 ```
-metadata temp
+{
+  "171411419": {
+    "movement": {
+      "drive": {
+        "turnToTheRight": "false",
+        "turnToTheLeft": "false",
+        "goForward": "true",
+        "goBackward": "false",
+        "duration": "1000"
+      },
+      "moveArms": {
+        "leftArmPosition": "",
+        "rightArmPosition": ""
+      },
+      "moveHead": {
+        "pitch": "",
+        "roll": "",
+        "yaw": ""
+      }
+    },
+    "expression": {
+      "changeLed": {
+        "red": "6",
+        "blue": "6",
+        "green": "45"
+      },
+      "setBlinking": "false",
+      "setFlashLight": "false"
+    }
+  }
+}
 ```
 All of the commands except the drive commands are explained at the official Misty website api page here:
+
+http://sdk.mistyrobotics.com/api-explorer/index.html
 
 I had to simplify the drive command because there were just to many options to keep it simple - you will see what I mean if you look at the api's at the api page listed above.
 
@@ -68,14 +177,21 @@ If the robot does not move for some reason there are 2 ways you can check and se
 
 2) You can also go to this address and post add this snippet on the left hand side of the playground and press the arrow. 
 
-(address)
+https://graphql-api.mainnet.dandelion.link/
 ```
-snipet
+  {
+    transactions(where: { metadata: { key: { _eq: "171411419" } } }) {
+      metadata {
+        key
+        value
+      }
+    }
+  }
 ```
 If your metadata was entered correctly, you will see it posted as the last entry (scroll down)
 
 
-## Last words
+# Last words
 To borrow an expression from out great Project Catalyst leader 'Dor', "This is an experiment"... and to add some words of my own, "Don't be surprised if it doesn't work". I am not developer, I am more of a hacker... but not the cool kind with a hoodie. I am more of the, "guy in the woods with a machete", kind of hacker. 
 
 # Good luck!
