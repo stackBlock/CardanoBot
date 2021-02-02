@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+<h1 align="center">Welcome to CardanoBot 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: mit" src="https://img.shields.io/badge/License-mit-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/cardano\_sense" target="_blank">
+    <img alt="Twitter: cardano\_sense" src="https://img.shields.io/badge/Domo%20Arigato%2C-Mr.%20Roboto!-blueviolet" />
+  </a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Robot controlled by metatdata posted to the Cardano blockchain
 
-## Available Scripts
+## Install
 
-In the project directory, you can run:
+```sh
+npm install
+```
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+npm start
+```
+## YOU DO NOT  INSTALL THIS REPO TO USE THE ROBOT
+I am just using this space to explain how working the robot works, you do not need to install this repo - you need to SEND METADATA to the Cardano blockchain to control the robot.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## What the hell is this?
+This was a way for me to try and justify buying a robot I haven't used in a while / finding a unique use case for the Cardano blockchain, specifically the metadata.
 
-### `npm test`
+## What can I do?
+You can drive my robot around by posting metadata to the Cardano blockchain.
+## Where do I go to see this so-called robot?
+This is the address to the live cam:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+(If this address is not working, the demo period is over... we needed the dining room back!!)
 
-### `npm run build`
+## How do I do this?
+I am assuming you know how to post metadata to the Cardano blockchain. It is beyond the scope of this readMe to explain how to do that - With that said, here is a sample of the code needed to post metadata if you are running a node. This was kindly provided to me by Cardano community member "TheRealAdamDean" long before I ventured onto this project:
+```
+```
+## Instructions
+The best thing to do is to watch my video:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Here is the metadata template, change the variables to make the robot do different things. DO NOT CHANGE THE ID NUMBER AT THE TOP OF THE METADATA OR THE ROBOT WILL NOT WORK,
+```
+metadata temp
+```
+All of the commands except the drive commands are explained at the official Misty website api page here:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I had to simplify the drive command because there were just to many options to keep it simple - you will see what I mean if you look at the api's at the api page listed above.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I am expecting you watched the video and looked at the api's - I will do my best to explain everything but the video and looking at Misty's api's are really a pre-requisite.
 
-### `npm run eject`
+## Turn radius information
+To turn the robot 90 degrees it takes about 4500 ms
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To turn the robot 180 degrees it takes about 6300 ms
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To turn the robot 270 degrees it takes about 7750 ms
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To turn the robot 360 degrees it takes about 8700 ms
+## Precautions
+You can only have one 'true' expression at a time in the drive part of the metadata.
+If the robot does not move for some reason there are 2 ways you can check and see if you posted the metadata correctly.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1) The data you posted will still show in the information on the side of the live stream if you posted it correctly.
 
-## Learn More
+2) You can also go to this address and post add this snippet on the left hand side of the playground and press the arrow. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+(address)
+```
+snipet
+```
+If your metadata was entered correctly, you will see it posted as the last entry (scroll down)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Last words
+To borrow an expression from out great Project Catalyst leader 'Dor', "This is an experiment"... and to add some words of my own, "Don't be surprised if it doesn't work". I am not developer, I am more of a hacker... but not the cool kind with a hoodie. I am more of the, "guy in the woods with a machete", kind of hacker. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Good luck!
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Author
 
-### Making a Progressive Web App
+👤 **Anthony Stachowitz**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Website: thecardanofund.com
+* Twitter: [@cardano\_sense](https://twitter.com/cardano\_sense)
+* Github: [@stackBlock](https://github.com/stackBlock)
+* LinkedIn: [@anthony-stachowitz-7b4b6937](https://linkedin.com/in/anthony-stachowitz-7b4b6937)
 
-### Advanced Configuration
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Give a ⭐️ if this project helped you!
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
