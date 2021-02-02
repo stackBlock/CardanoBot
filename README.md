@@ -36,6 +36,7 @@ You can drive my robot around by posting metadata to the Cardano blockchain.
 # Where do I go to see this so-called robot?
 This is the address to the live cam:
 https://us02web.zoom.us/j/81486784766 (Password: 013526)
+
 (If this address is not working, the demo period is over... we needed the dining room back!!)
 
 # How do I do this?
