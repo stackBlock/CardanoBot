@@ -9,7 +9,8 @@
   </a>
 </p>
 
-> Robot controlled by metatdata posted to the Cardano blockchain
+> Robot controlled by metatdata posted to the Cardano blockchain. Misty will be on line for people to use between 2/2/2021 and 2/10/2021. I turn her off at night (I am in the EST time zone). I will probably turn her on at around 10:00 am EST and turn her off at around 11:00 pm EST. If you need any more information please don't hesitate to email. anthony@thecardanofund.com
+Anthony
 
 ## Install
 
